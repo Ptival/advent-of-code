@@ -1,0 +1,6 @@
+cradle:
+  cabal:
+    - path: "./day01"
+      component: "exe:day01"
+    - path: "./lib"
+      component: "advent-of-code"

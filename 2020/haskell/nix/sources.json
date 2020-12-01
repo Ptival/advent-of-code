@@ -1,0 +1,86 @@
+{
+    "hackage.nix": {
+        "branch": "master",
+        "description": "Automatically generated Nix expressions for Hackage",
+        "homepage": "",
+        "owner": "input-output-hk",
+        "repo": "hackage.nix",
+        "rev": "efc3d30740397084b977a2ffbba39808a84c33a2",
+        "sha256": "00p3021jrlz3m17z2cbr8aqa43xl7b3zmnwxbipr3bbylacmnrrr",
+        "type": "tarball",
+        "url": "https://github.com/input-output-hk/hackage.nix/archive/efc3d30740397084b977a2ffbba39808a84c33a2.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "haskell-language-server": {
+        "branch": "0.6.0",
+        "description": "Integration point for ghcide and haskell-ide-engine. One IDE to rule them all.",
+        "homepage": "",
+        "owner": "haskell",
+        "repo": "haskell-language-server",
+        "rev": "372a12e797069dc3ac4fa33dcaabe3b992999d7c",
+        "sha256": "1p2p0shxgvrgflanp57bknagxj57pmkxd7007hvcnf89v658b1q1",
+        "type": "tarball",
+        "url": "https://github.com/haskell/haskell-language-server/archive/372a12e797069dc3ac4fa33dcaabe3b992999d7c.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "haskell.nix": {
+        "branch": "master",
+        "description": "Alternative Haskell Infrastructure for Nixpkgs",
+        "homepage": "https://input-output-hk.github.io/haskell.nix",
+        "owner": "input-output-hk",
+        "repo": "haskell.nix",
+        "rev": "7078b145e981e8b14fc7ea62126fab3378090ef4",
+        "sha256": "01vwsz14nkjd4qggxxmscmvvfcsbch0lf0frvldf8p4w1rwl54va",
+        "type": "tarball",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/7078b145e981e8b14fc7ea62126fab3378090ef4.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "implicit-hie": {
+        "branch": "master",
+        "description": "Auto generate a stack or cabal multi component hie.yaml file",
+        "homepage": "",
+        "owner": "Avi-D-coder",
+        "repo": "implicit-hie",
+        "rev": "fc93819ce4bd6ff0ae78a462c08ecde137daf614",
+        "sha256": "13gfm7hs0vhrd5qjvpcwyy985ks2lzrp386pzv55s1jqiwh3rcdz",
+        "type": "tarball",
+        "url": "https://github.com/Avi-D-coder/implicit-hie/archive/fc93819ce4bd6ff0ae78a462c08ecde137daf614.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "niv": {
+        "branch": "master",
+        "description": "Easy dependency management for Nix projects",
+        "homepage": "https://github.com/nmattia/niv",
+        "owner": "nmattia",
+        "repo": "niv",
+        "rev": "ba57d5a29b4e0f2085917010380ef3ddc3cf380f",
+        "sha256": "1kpsvc53x821cmjg1khvp1nz7906gczq8mp83664cr15h94sh8i4",
+        "type": "tarball",
+        "url": "https://github.com/nmattia/niv/archive/ba57d5a29b4e0f2085917010380ef3ddc3cf380f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nixpkgs": {
+        "branch": "nixos-unstable",
+        "description": "A read-only mirror of NixOS/nixpkgs tracking the released channels. Send issues and PRs to",
+        "homepage": "https://github.com/NixOS/nixpkgs",
+        "owner": "NixOS",
+        "repo": "nixpkgs-channels",
+        "rev": "84d74ae9c9cbed73274b8e4e00be14688ffc93fe",
+        "sha256": "0ww70kl08rpcsxb9xdx8m48vz41dpss4hh3vvsmswll35l158x0v",
+        "type": "tarball",
+        "url": "https://github.com/NixOS/nixpkgs-channels/archive/84d74ae9c9cbed73274b8e4e00be14688ffc93fe.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nur": {
+        "branch": "master",
+        "description": "Nix User Repository: User contributed nix packages [maintainer=@Mic92]",
+        "homepage": "",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "91c655d4adfee164b867f97f279c87ff607b37a3",
+        "sha256": "0zmsk397km3hswfqm1182yk1qipi24vyx9b5lx0vsib51kd5bm2v",
+        "type": "tarball",
+        "url": "https://github.com/nix-community/NUR/archive/91c655d4adfee164b867f97f279c87ff607b37a3.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
