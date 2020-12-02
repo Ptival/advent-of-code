@@ -5,6 +5,10 @@ default-extensions: []
 
 dependencies:
   - base ^>= 4.13.0.0
+  - cond
+  - lens
+  - megaparsec
+  - MissingH
   - string-interpolate
 
 executables:
@@ -12,10 +16,13 @@ executables:
     main: Main.hs
     source-dirs: day01
     dependencies: []
+  day02:
+    main: Main.hs
+    source-dirs: day02
+    dependencies: []
 
 ghc-options:
   - -Wall
-  - -Werror
 
 library:
 
@@ -30,13 +37,5 @@ library:
 license: BSD3
 
 name: advent-of-code
-
-tests:
-  test-day01:
-    main: Main.hs
-    source-dirs: day01/test
-    dependencies:
-      - advent-of-code
-    other-modules: []
 
 version: 2020.12.1

@@ -14,9 +14,13 @@ build-type:     Simple
 library
   hs-source-dirs:
       lib
-  ghc-options: -Wall -Werror
+  ghc-options: -Wall
   build-depends:
-      base >=4.13.0.0 && <4.14
+      MissingH
+    , base >=4.13.0.0 && <4.14
+    , cond
+    , lens
+    , megaparsec
     , string-interpolate
   default-language: Haskell2010
 
@@ -26,20 +30,28 @@ executable day01
       Paths_advent_of_code
   hs-source-dirs:
       day01
-  ghc-options: -Wall -Werror
+  ghc-options: -Wall
   build-depends:
-      base >=4.13.0.0 && <4.14
+      MissingH
+    , base >=4.13.0.0 && <4.14
+    , cond
+    , lens
+    , megaparsec
     , string-interpolate
   default-language: Haskell2010
 
-test-suite test-day01
-  type: exitcode-stdio-1.0
+executable day02
   main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
   hs-source-dirs:
-      day01/test
-  ghc-options: -Wall -Werror
+      day02
+  ghc-options: -Wall
   build-depends:
-      advent-of-code
+      MissingH
     , base >=4.13.0.0 && <4.14
+    , cond
+    , lens
+    , megaparsec
     , string-interpolate
   default-language: Haskell2010
