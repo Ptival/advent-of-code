@@ -25,11 +25,14 @@ makeLenses ''Input
 
 type Parser = Parsec Void String
 
+integer :: Parser Int
+integer = read <$> many digitChar
+
 parseInputLine :: Parser Input
 parseInputLine =
   do
-    _firstNumber <- read <$> many digitChar <* char '-'
-    _secondNumber <- read <$> many digitChar <* space
+    _firstNumber <- integer <* char '-'
+    _secondNumber <- integer <* space
     _wantedChar <- asciiChar <* char ':' <* space
     _password <- many asciiChar
     return $
