@@ -24,6 +24,10 @@ executables:
     main: Main.hs
     source-dirs: day03
     dependencies: []
+  day04:
+    main: Main.hs
+    source-dirs: day04
+    dependencies: []
 
 ghc-options:
   - -Wall
