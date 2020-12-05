@@ -5,6 +5,7 @@ default-extensions: []
 
 dependencies:
   - base ^>= 4.13.0.0
+  - binary-literal-qq
   - cond
   - lens
   - megaparsec
@@ -27,6 +28,10 @@ executables:
   day04:
     main: Main.hs
     source-dirs: day04
+    dependencies: []
+  day05:
+    main: Main.hs
+    source-dirs: day05
     dependencies: []
 
 ghc-options:

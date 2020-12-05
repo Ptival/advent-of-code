@@ -18,6 +18,7 @@ library
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
     , cond
     , lens
     , megaparsec
@@ -34,6 +35,7 @@ executable day01
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
     , cond
     , lens
     , megaparsec
@@ -50,6 +52,7 @@ executable day02
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
     , cond
     , lens
     , megaparsec
@@ -66,6 +69,7 @@ executable day03
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
     , cond
     , lens
     , megaparsec
@@ -82,6 +86,24 @@ executable day04
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
+    , cond
+    , lens
+    , megaparsec
+    , string-interpolate
+  default-language: Haskell2010
+
+executable day05
+  main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      day05
+  ghc-options: -Wall
+  build-depends:
+      MissingH
+    , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
     , cond
     , lens
     , megaparsec
