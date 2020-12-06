@@ -109,3 +109,20 @@ executable day05
     , megaparsec
     , string-interpolate
   default-language: Haskell2010
+
+executable day06
+  main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      day06
+  ghc-options: -Wall
+  build-depends:
+      MissingH
+    , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
+    , cond
+    , lens
+    , megaparsec
+    , string-interpolate
+  default-language: Haskell2010
