@@ -9,24 +9,16 @@ import Data.Maybe (fromMaybe)
 import Data.String.Interpolate (__i)
 import Data.Void (Void)
 import Text.Megaparsec (Parsec, parseMaybe, sepBy, sepEndBy, try, (<|>))
-import Text.Megaparsec.Char (char, digitChar, letterChar, newline, space, string)
+import Text.Megaparsec.Char (digitChar, letterChar, newline, space, string)
 
 type Parser = Parsec Void String
 
 type BagColor = String
 
--- >>> parseMaybe parseColorTerm "light "
--- Just "light"
-parseColorTerm :: Parser String
-parseColorTerm = some letterChar
-
-punctuation :: Parser ()
-punctuation = void (char ',' <|> char '.' <|> char ' ')
-
 -- | Parses a sentence like "light red bag," or "dark blue bag." and returns the
 -- list of color terms.
--- >>> runParser parseColoredBag "test" "light red bags contain 1 bright white bag, 2 muted yellow bags."
--- Right "light red"
+-- >>> parseMaybe parseColoredBag "light red bags"
+-- Just "light red"
 parseColoredBag :: Parser String
 parseColoredBag =
   do
@@ -36,8 +28,8 @@ parseColoredBag =
     -- void (string "bag" >> try (string "s"))
     return (unwords [adjective, colorName])
 
--- >>> runParser parseNumberedBag "test" "1 bright white bags"
--- Right ("bright white",1)
+-- >>> parseMaybe parseNumberedBag "1 bright white bags"
+-- Just ("bright white",1)
 parseNumberedBag :: Parser (BagColor, Int)
 parseNumberedBag =
   do
@@ -55,7 +47,7 @@ data ContainmentRule
   | Contains [(BagColor, Int)]
   deriving (Show)
 
--- >>> runParser parseContainmentRule "test" "light red bags contain 1 bright white bag, 2 muted yellow bags."
+-- >>> parseMaybe parseContainmentRule "light red bags contain 1 bright white bag, 2 muted yellow bags."
 -- Right ("light red",Contains [("bright white",1),("muted yellow",2)])
 parseContainmentRule :: Parser (BagColor, ContainmentRule)
 parseContainmentRule =
