@@ -81,9 +81,9 @@ canHold targetColor rules color = maybe False checkRule (lookup color rules)
   where
     checkRule :: ContainmentRule -> Bool
     checkRule ContainsNoOtherBag = False
-    checkRule (Contains list)
-      | any ((==) targetColor . fst) list = True
-      | otherwise = or (canHold targetColor rules <$> map fst list)
+    checkRule (Contains numberedBags)
+      | any ((==) targetColor . fst) numberedBags = True
+      | otherwise = or (canHold targetColor rules . fst <$> numberedBags)
 
 countBagsThatCanHold :: BagColor -> Rules -> Int
 countBagsThatCanHold targetColor rules =
