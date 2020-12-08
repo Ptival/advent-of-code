@@ -110,12 +110,12 @@ runProgram ::
   Sem e ()
 runProgram =
   do
-    p <- gets (view program)
-    pc <- gets (view programCounter)
+    myProgram <- gets (view program)
+    myProgramCounter <- gets (view programCounter)
     wasAlreadyVisited <- gets (view instructionHistory)
-    unless (wasAlreadyVisited pc || pc >= length p) $ do
-      markInstruction pc
-      performInstruction =<< fetchInstruction pc
+    unless (wasAlreadyVisited myProgramCounter || myProgramCounter >= length myProgram) $ do
+      markInstruction myProgramCounter
+      performInstruction =<< fetchInstruction myProgramCounter
       runProgram
 
 -- | Runs a program to completion/loop and returns its final state.
