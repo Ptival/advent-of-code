@@ -7,9 +7,12 @@ dependencies:
   - base ^>= 4.13.0.0
   - binary-literal-qq
   - cond
+  - extra
   - lens
   - megaparsec
   - MissingH
+  - polysemy
+  - polysemy-plugin
   - string-interpolate
 
 executables:
@@ -41,8 +44,16 @@ executables:
     main: Main.hs
     source-dirs: day07
     dependencies: []
+  day08:
+    main: Main.hs
+    source-dirs: day08
+    dependencies: []
 
 ghc-options:
+  - -flate-specialise
+  - -fplugin=Polysemy.Plugin
+  - -fspecialise-aggressively
+  - -O2
   - -Wall
 
 library:

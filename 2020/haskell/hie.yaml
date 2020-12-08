@@ -14,5 +14,7 @@ cradle:
       component: "exe:day06"
     - path: "./day07"
       component: "exe:day07"
+    - path: "./day08"
+      component: "exe:day08"
     - path: "./lib"
       component: "advent-of-code"

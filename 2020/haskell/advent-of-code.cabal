@@ -14,14 +14,17 @@ build-type:     Simple
 library
   hs-source-dirs:
       lib
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -31,14 +34,17 @@ executable day01
       Paths_advent_of_code
   hs-source-dirs:
       day01
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -48,14 +54,17 @@ executable day02
       Paths_advent_of_code
   hs-source-dirs:
       day02
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -65,14 +74,17 @@ executable day03
       Paths_advent_of_code
   hs-source-dirs:
       day03
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -82,14 +94,17 @@ executable day04
       Paths_advent_of_code
   hs-source-dirs:
       day04
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -99,14 +114,17 @@ executable day05
       Paths_advent_of_code
   hs-source-dirs:
       day05
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -116,14 +134,17 @@ executable day06
       Paths_advent_of_code
   hs-source-dirs:
       day06
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
 
@@ -133,13 +154,36 @@ executable day07
       Paths_advent_of_code
   hs-source-dirs:
       day07
-  ghc-options: -Wall
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
     , cond
+    , extra
     , lens
     , megaparsec
+    , polysemy
+    , polysemy-plugin
+    , string-interpolate
+  default-language: Haskell2010
+
+executable day08
+  main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      day08
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
+  build-depends:
+      MissingH
+    , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
+    , cond
+    , extra
+    , lens
+    , megaparsec
+    , polysemy
+    , polysemy-plugin
     , string-interpolate
   default-language: Haskell2010
