@@ -66,6 +66,8 @@ initialInterpreterState _program =
       _programCounter = 0
     }
 
+-- * Building the interpreter
+
 -- | Increments the program counter.
 bumpProgramCounter ::
   Member (State InterpreterState) e =>
@@ -116,29 +118,31 @@ runProgram =
       performInstruction =<< fetchInstruction pc
       runProgram
 
--- | Computes all the alternatives of a program where exactly one of the Jmp/Nop
--- instructions was switched into Nop/Jmp respectively.
-programAlternatives :: Program -> [Program]
-programAlternatives [] = [[]]
-programAlternatives ((Acc, arg) : instrs) =
-  [(Acc, arg) : altInstrs | altInstrs <- programAlternatives instrs]
-programAlternatives ((Jmp, arg) : instrs) =
-  ((Nop, arg) : instrs) :
-    [(Jmp, arg) : altInstrs | altInstrs <- programAlternatives instrs]
-programAlternatives ((Nop, arg) : instrs) =
-  ((Jmp, arg) : instrs) :
-    [(Nop, arg) : altInstrs | altInstrs <- programAlternatives instrs]
-
 -- | Runs a program to completion/loop and returns its final state.
 programFinalState :: Program -> InterpreterState
 programFinalState myProgram =
   run (execState (initialInterpreterState myProgram) runProgram)
+
+-- * Part 1
 
 -- | Runs a program until it loops and returns the value of the accumulator as
 -- the looping begins.
 valueInAccumulatorBeforeLooping :: Program -> Int
 valueInAccumulatorBeforeLooping =
   view accumulator . programFinalState
+
+-- * Part 2
+
+-- | Computes all the alternatives of a program where exactly one of the Jmp/Nop
+-- instructions was switched into Nop/Jmp respectively.
+programAlternatives :: Program -> [Program]
+programAlternatives [] = [[]]
+programAlternatives (instr@(Acc, _) : instrs) =
+  (instr :) <$> programAlternatives instrs
+programAlternatives (instr@(Jmp, arg) : instrs) =
+  ((Nop, arg) : instrs) : ((instr :) <$> programAlternatives instrs)
+programAlternatives (instr@(Nop, arg) : instrs) =
+  ((Jmp, arg) : instrs) : ((instr :) <$> programAlternatives instrs)
 
 -- | Checks whether a program runs to completion without looping, and if so,
 -- returns its final accumulator.
@@ -153,8 +157,9 @@ checkProgramAndGrabFinalAccumulator myProgram =
 -- looping, and returns its final accumulator.
 accumulatorForAlternativeEndingWithoutLooping :: Program -> Maybe Int
 accumulatorForAlternativeEndingWithoutLooping myProgram =
-  let alternatives = programAlternatives myProgram
-   in firstJust checkProgramAndGrabFinalAccumulator alternatives
+  firstJust checkProgramAndGrabFinalAccumulator (programAlternatives myProgram)
+
+-- * Executable
 
 main :: IO ()
 main =
@@ -166,7 +171,7 @@ main =
     putStrLn [__i|Problem 1: #{solution1}|]
     putStrLn [__i|Problem 2: #{solution2}|]
 
-{--- TESTS ---}
+-- * Tests
 
 -- >>> parseMaybe parseInstruction "acc -99"
 -- Just (Acc,-99)
