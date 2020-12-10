@@ -54,6 +54,10 @@ executables:
     source-dirs: day09
     dependencies:
       - advent-of-code
+  day10:
+    main: Main.hs
+    source-dirs: day10
+    dependencies: []
 
 ghc-options:
   - -flate-specialise
