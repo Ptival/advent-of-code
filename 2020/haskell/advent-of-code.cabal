@@ -19,15 +19,23 @@ library
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day01
@@ -39,16 +47,24 @@ executable day01
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , advent-of-code
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day02
@@ -60,15 +76,23 @@ executable day02
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day03
@@ -80,15 +104,23 @@ executable day03
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day04
@@ -100,15 +132,23 @@ executable day04
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day05
@@ -120,15 +160,23 @@ executable day05
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day06
@@ -140,15 +188,23 @@ executable day06
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day07
@@ -160,15 +216,23 @@ executable day07
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day08
@@ -180,15 +244,23 @@ executable day08
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day09
@@ -200,16 +272,24 @@ executable day09
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , advent-of-code
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
   default-language: Haskell2010
 
 executable day10
@@ -221,13 +301,49 @@ executable day10
   ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
   build-depends:
       MissingH
+    , adjunctions
     , base >=4.13.0.0 && <4.14
     , binary-literal-qq
+    , comonad
     , cond
+    , containers
+    , distributive
     , extra
+    , finite-typelits
     , lens
     , megaparsec
     , polysemy
     , polysemy-plugin
+    , reflection
+    , safe
     , string-interpolate
+    , vector-sized
+  default-language: Haskell2010
+
+executable day11
+  main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      day11
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
+  build-depends:
+      MissingH
+    , adjunctions
+    , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
+    , comonad
+    , cond
+    , containers
+    , distributive
+    , extra
+    , finite-typelits
+    , lens
+    , megaparsec
+    , polysemy
+    , polysemy-plugin
+    , reflection
+    , safe
+    , string-interpolate
+    , vector-sized
   default-language: Haskell2010

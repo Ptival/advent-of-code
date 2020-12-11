@@ -4,16 +4,24 @@ author:
 default-extensions: []
 
 dependencies:
+  - adjunctions
   - base ^>= 4.13.0.0
   - binary-literal-qq
+  - comonad
   - cond
+  - containers
+  - distributive
   - extra
+  - finite-typelits
   - lens
   - megaparsec
   - MissingH
   - polysemy
   - polysemy-plugin
+  - reflection
+  - safe
   - string-interpolate
+  - vector-sized
 
 executables:
   day01:
@@ -57,6 +65,10 @@ executables:
   day10:
     main: Main.hs
     source-dirs: day10
+    dependencies: []
+  day11:
+    main: Main.hs
+    source-dirs: day11
     dependencies: []
 
 ghc-options:
