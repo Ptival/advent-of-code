@@ -347,3 +347,31 @@ executable day11
     , string-interpolate
     , vector-sized
   default-language: Haskell2010
+
+executable day12
+  main-is: Main.hs
+  other-modules:
+      Paths_advent_of_code
+  hs-source-dirs:
+      day12
+  ghc-options: -flate-specialise -fplugin=Polysemy.Plugin -fspecialise-aggressively -O2 -Wall
+  build-depends:
+      MissingH
+    , adjunctions
+    , base >=4.13.0.0 && <4.14
+    , binary-literal-qq
+    , comonad
+    , cond
+    , containers
+    , distributive
+    , extra
+    , finite-typelits
+    , lens
+    , megaparsec
+    , polysemy
+    , polysemy-plugin
+    , reflection
+    , safe
+    , string-interpolate
+    , vector-sized
+  default-language: Haskell2010

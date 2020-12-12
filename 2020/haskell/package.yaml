@@ -70,6 +70,10 @@ executables:
     main: Main.hs
     source-dirs: day11
     dependencies: []
+  day12:
+    main: Main.hs
+    source-dirs: day12
+    dependencies: []
 
 ghc-options:
   - -flate-specialise
