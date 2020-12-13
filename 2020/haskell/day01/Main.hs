@@ -2,10 +2,10 @@
 
 module Main where
 
+import AdventOfCode.Tuples ( tuplesOfSize )
 import Data.List (find)
 import Data.Maybe (fromJust)
 import Data.String.Interpolate (i)
-import Tuples
 
 sumTo2020 :: [Integer] -> Bool
 sumTo2020 = (==) 2020 . sum

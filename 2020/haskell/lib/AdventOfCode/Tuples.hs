@@ -1,4 +1,4 @@
-module Tuples (tuplesOfSize) where
+module AdventOfCode.Tuples (tuplesOfSize) where
 
 -- | Returns all lists the size of the first argument, made from elements
 -- sampled from the second argument.

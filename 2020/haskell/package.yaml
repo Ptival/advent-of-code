@@ -69,11 +69,17 @@ executables:
   day11:
     main: Main.hs
     source-dirs: day11
-    dependencies: []
+    dependencies:
+      - advent-of-code
   day12:
     main: Main.hs
     source-dirs: day12
     dependencies: []
+  day13:
+    main: Main.hs
+    source-dirs: day13
+    dependencies:
+      - advent-of-code
 
 ghc-options:
   - -flate-specialise
@@ -87,7 +93,8 @@ library:
   dependencies: []
 
   exposed-modules:
-    - Tuples
+    - AdventOfCode.Both
+    - AdventOfCode.Tuples
 
   other-modules: []
 

@@ -9,10 +9,10 @@
 
 module Main where
 
+import AdventOfCode.Both ( both )
 import Control.Arrow ((&&&), (>>>))
 import Control.Comonad (Comonad (..))
 import Control.Comonad.Representable.Store (Store, experiment, peek, store)
-import Data.Bifunctor (Bifunctor, bimap)
 import Data.Data (Proxy (Proxy))
 import Data.Finite (Finite, finites, getFinite, packFinite)
 import Data.Foldable (asum, find)
@@ -75,10 +75,6 @@ grid = asSizedVector <$> count l (line <* newline)
 
 alterFinite :: KnownNat n => (Integer -> Integer) -> Finite n -> Maybe (Finite n)
 alterFinite f = getFinite >>> f >>> packFinite
-
--- | Both 'first' and 'second'.
-both :: Bifunctor p => (a -> b) -> p a a -> p b b
-both f = bimap f f
 
 -- | Returns all 8 offsets for neighboring cells.
 eightDirections :: [(Integer, Integer)]

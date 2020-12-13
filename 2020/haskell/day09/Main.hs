@@ -6,6 +6,7 @@
 
 module Main where
 
+import AdventOfCode.Tuples ( tuplesOfSize )
 import Data.List (find, tails)
 import Data.List.Extra (inits)
 import Data.Maybe (fromMaybe)
@@ -13,7 +14,6 @@ import Data.String.Interpolate (__i)
 import Data.Void (Void)
 import Text.Megaparsec (Parsec, parseMaybe, sepEndBy, some)
 import Text.Megaparsec.Char (digitChar, newline)
-import Tuples (tuplesOfSize)
 
 type Parser = Parsec Void String
 
