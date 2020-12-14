@@ -33,10 +33,7 @@ import Prelude hiding (Either (..))
 
 type Parser = Parsec Void String
 
-data BitMaskBit
-  = MaskZero
-  | MaskOne
-  | MaskFloat
+data BitMaskBit = MaskZero | MaskOne | MaskFloat
 
 instance Show BitMaskBit where
   show MaskZero = "0"
