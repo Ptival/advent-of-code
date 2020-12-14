@@ -9,7 +9,7 @@
 
 module Main where
 
-import AdventOfCode.Both ( both )
+import AdventOfCode.Both (both)
 import Control.Arrow ((&&&), (>>>))
 import Control.Comonad (Comonad (..))
 import Control.Comonad.Representable.Store (Store, experiment, peek, store)
@@ -21,9 +21,9 @@ import Data.Functor.Compose (Compose)
 import Data.Maybe (catMaybes, fromJust, fromMaybe, isJust)
 import Data.Reflection (reifyNat)
 import Data.String.Interpolate (__i)
+import Data.TypeNums (KnownNat, Nat, natVal)
 import qualified Data.Vector.Sized as V
 import Data.Void (Void)
-import GHC.TypeLits (KnownNat, Nat, natVal)
 import Safe (findJust)
 import Text.Megaparsec (Parsec, count, parseMaybe)
 import Text.Megaparsec.Char (char, newline)
