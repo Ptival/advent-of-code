@@ -21,6 +21,7 @@ dependencies:
   - reflection
   - safe
   - string-interpolate
+  - typenums
   - vector-sized
 
 executables:
@@ -80,6 +81,10 @@ executables:
     source-dirs: day13
     dependencies:
       - advent-of-code
+  day14:
+    main: Main.hs
+    source-dirs: day14
+    dependencies: []
 
 ghc-options:
   - -flate-specialise
