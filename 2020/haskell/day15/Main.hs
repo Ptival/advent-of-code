@@ -8,7 +8,7 @@ module Main where
 import Control.Lens (makeLenses, over, set, view)
 import Data.Function ((&))
 import Data.List (foldl')
-import qualified Data.Map.Strict as M
+import qualified Data.IntMap.Strict as M
 import Data.Maybe (fromMaybe)
 import Data.String.Interpolate (__i)
 import Data.Void (Void)
@@ -26,7 +26,7 @@ newtype Turn = Turn {getTurn :: Int} deriving (Eq, Num, Ord, Show)
 
 newtype Play = Play {getPlay :: Int} deriving (Eq, Num, Ord, Show)
 
-type LastSeenLog = M.Map Play Turn
+type LastSeenLog = M.IntMap Turn
 
 data State = State
   { _currentTurn :: Turn,
@@ -65,7 +65,7 @@ play :: State -> Play -> State
 play s p =
   s
     & over currentTurn (+ 1)
-    & over lastSeenLog (M.insert (view previousTurnPlay s) (view currentTurn s))
+    & over lastSeenLog (M.insert (getPlay (view previousTurnPlay s)) (view currentTurn s))
     & set previousTurnPlay p
 
 -- | Plays all the given starting plays, ignoring the rules, but building up the
@@ -81,7 +81,7 @@ nextPlay s =
     ( maybe
         (Play 0)
         (Play . getTurn . (view currentTurn s -))
-        (M.lookup (view previousTurnPlay s) (view lastSeenLog s))
+        (M.lookup (getPlay (view previousTurnPlay s)) (view lastSeenLog s))
     )
 
 -- | Given a turn to reach, plays all the way to that turn.
