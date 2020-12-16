@@ -37,7 +37,9 @@ library
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -67,7 +69,9 @@ executable day01
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -97,7 +101,9 @@ executable day02
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -126,7 +132,9 @@ executable day03
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -155,7 +163,9 @@ executable day04
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -184,7 +194,9 @@ executable day05
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -213,7 +225,9 @@ executable day06
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -242,7 +256,9 @@ executable day07
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -271,7 +287,9 @@ executable day08
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -301,7 +319,9 @@ executable day09
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -330,7 +350,9 @@ executable day10
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -360,7 +382,9 @@ executable day11
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -389,7 +413,9 @@ executable day12
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -419,7 +445,9 @@ executable day13
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -448,7 +476,9 @@ executable day14
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -477,7 +507,9 @@ executable day15
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010
 
@@ -507,6 +539,8 @@ executable day16
     , reflection
     , safe
     , string-interpolate
+    , tardis
     , typenums
+    , vector
     , vector-sized
   default-language: Haskell2010

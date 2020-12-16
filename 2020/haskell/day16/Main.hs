@@ -14,8 +14,9 @@ import Control.Arrow ((>>>))
 import Control.Lens (makeLenses)
 import Control.Lens.Combinators (over, view)
 import Control.Monad (void)
+import Control.Monad.Tardis (Tardis, evalTardis, getFuture, getPast, modifyBackwards, modifyForwards)
 import Data.Function (on, (&))
-import Data.List (isPrefixOf, transpose)
+import Data.List (isPrefixOf, transpose, (\\))
 import Data.Maybe (fromMaybe)
 import Data.String.Interpolate (__i)
 import Data.Void (Void)
@@ -122,18 +123,28 @@ computePossibleFieldsByPosition myInput =
   gatherValuesByPosition myInput
     & map (canBeOneOfTheseFields myInput)
 
--- | Given a list of possibilities at each index, resolves the constraint that
--- each index contains exactly one distinct value. Could be improved greatly for
--- performance.
-resolveConstraints :: forall a. Eq a => [[a]] -> [a]
-resolveConstraints constraints
-  | maximum (map length constraints) == 1 = map head constraints
-  | otherwise = resolveConstraints (map stepResolve constraints)
+-- Performs a one-pass scan of the input, and removes from all other lists
+-- values that are present in a singleton list.
+step :: Eq a => [[a]] -> Tardis [a] [a] [[a]]
+step [] = pure []
+step ([opt] : rest) =
+  modifyBackwards (opt :) >> modifyForwards (opt :) >> ([opt] :) <$> step rest
+step (opts : rest) =
+  do
+    taken <- (++) <$> getPast <*> getFuture
+    ((opts \\ taken) :) <$> step rest
+
+equilibrium :: Eq a => (a -> a) -> a -> a
+equilibrium f a =
+  let fa = f a
+   in if fa == a then a else equilibrium f fa
+
+-- | Assuming there exists exactly one assignment of distinct values, for each
+-- index, taken from the original list at that index, computes the assignment.
+assignUnique :: Eq a => [[a]] -> [a]
+assignUnique = equilibrium myStep >>> (head <$>)
   where
-    stepResolve :: [a] -> [a]
-    stepResolve l
-      | length l == 1 = l
-      | otherwise = filter (not . (`elem` constraints) . pure) l
+    myStep options = evalTardis (step options) ([], [])
 
 -- | Given a list of fields, returns the indices of those whose name start with
 -- "departure".
@@ -173,7 +184,7 @@ partTwo :: Input v -> Int
 partTwo myInput =
   discardInvalidTickets myInput
     & computePossibleFieldsByPosition
-    & resolveConstraints
+    & assignUnique
     & indicesOfDepartureFields
     & checkThatSixFieldsWereSelected
     & multiplyFieldsFromMyTicket myInput

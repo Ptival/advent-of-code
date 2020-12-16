@@ -21,7 +21,9 @@ dependencies:
   - reflection
   - safe
   - string-interpolate
+  - tardis
   - typenums
+  - vector
   - vector-sized
 
 executables:
