@@ -4,6 +4,7 @@
 
 module Main where
 
+import AdventOfCode.Between (isBetween)
 import Control.Lens (makeLenses, (^.))
 import Data.Algebra.Boolean (xor)
 import Data.Either (rights)
@@ -46,7 +47,7 @@ parseInputLine =
 firstPolicy :: Input -> Bool
 firstPolicy input =
   let occurrences = countElem (input ^. wantedChar) (input ^. password)
-   in (input ^. firstNumber <= occurrences) && (occurrences <= input ^. secondNumber)
+   in isBetween (input ^. firstNumber) (input ^. secondNumber) occurrences
 
 secondPolicy :: Input -> Bool
 secondPolicy input =
