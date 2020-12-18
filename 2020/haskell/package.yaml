@@ -4,99 +4,154 @@ author:
 default-extensions: []
 
 dependencies:
-  - adjunctions
   - base ^>= 4.13.0.0
-  - binary-literal-qq
-  - comonad
-  - cond
-  - containers
-  - distributive
-  - extra
-  - finite-typelits
   - lens
   - megaparsec
-  - MissingH
   - polysemy
   - polysemy-plugin
-  - reflection
-  - safe
   - string-interpolate
-  - tardis
-  - typenums
-  - vector
-  - vector-sized
+
+  # - adjunctions
+  # - binary-literal-qq
+  # - comonad
+  # - cond
+  # - containers
+  # - distributive
+  # - extra
+  # - fin
+  # - finite-typelits
+  # - MissingH
+  # - reflection
+  # - safe
+  # - singletons
+  # - streams
+  # - tardis
+  # - type-natural
+  # - typenums
+  # - vector
+  # - vector-sized
 
 executables:
+
   day01:
     main: Main.hs
     source-dirs: day01
     dependencies:
       - advent-of-code
+
   day02:
     main: Main.hs
     source-dirs: day02
     dependencies:
       - advent-of-code
+      - cond
+      - MissingH
+
   day03:
     main: Main.hs
     source-dirs: day03
     dependencies: []
+
   day04:
     main: Main.hs
     source-dirs: day04
     dependencies: []
+
   day05:
     main: Main.hs
     source-dirs: day05
-    dependencies: []
+    dependencies:
+      - binary-literal-qq
+
   day06:
     main: Main.hs
     source-dirs: day06
     dependencies: []
+
   day07:
     main: Main.hs
     source-dirs: day07
     dependencies: []
+
   day08:
     main: Main.hs
     source-dirs: day08
-    dependencies: []
+    dependencies:
+      - extra
+
   day09:
     main: Main.hs
     source-dirs: day09
     dependencies:
       - advent-of-code
+      - extra
+
   day10:
     main: Main.hs
     source-dirs: day10
-    dependencies: []
+    dependencies:
+      - extra
+
   day11:
     main: Main.hs
     source-dirs: day11
     dependencies:
+      - adjunctions
       - advent-of-code
+      - comonad
+      - finite-typelits
+      - reflection
+      - safe
+      - typenums
+      - vector-sized
+
   day12:
     main: Main.hs
     source-dirs: day12
     dependencies: []
+
   day13:
     main: Main.hs
     source-dirs: day13
     dependencies:
       - advent-of-code
+      - extra
+      - safe
+
   day14:
     main: Main.hs
     source-dirs: day14
-    dependencies: []
+    dependencies:
+      - containers
+      - finite-typelits
+      - typenums
+      - vector-sized
+
   day15:
     main: Main.hs
     source-dirs: day15
-    dependencies: []
+    dependencies:
+      - containers
+
   day16:
     main: Main.hs
     source-dirs: day16
     dependencies:
       - advent-of-code
+      - tardis
+
+  day17:
+    main: Main.hs
+    source-dirs: day17
+    dependencies:
+      - adjunctions
+      - advent-of-code
+      - comonad
+      - distributive
+      - finite-typelits
+      - streams
+      - type-natural
+      - vector-sized
 
 ghc-options:
   - -flate-specialise

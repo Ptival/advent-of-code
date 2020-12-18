@@ -2,14 +2,11 @@
 
 module Main where
 
-import Data.Bifunctor (first)
 import Data.Function (on)
-import Data.List (maximumBy, minimumBy)
-import Data.List.Extra (find)
+import Data.List (minimumBy)
 import Data.Maybe (fromMaybe)
 import Data.String.Interpolate (i, __i)
 import Data.Void (Void)
-import Debug.Trace (trace)
 import Safe (findJust)
 import Text.Megaparsec (Parsec, parseMaybe, sepBy, some, (<|>))
 import Text.Megaparsec.Char (char, digitChar, newline)

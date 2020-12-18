@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "input-output-hk",
         "repo": "hackage.nix",
-        "rev": "efc3d30740397084b977a2ffbba39808a84c33a2",
-        "sha256": "00p3021jrlz3m17z2cbr8aqa43xl7b3zmnwxbipr3bbylacmnrrr",
+        "rev": "6ed7bca1b5aadbc3c0e58e66b08b5579cb6541a7",
+        "sha256": "0bi28xvvlprayhdlcf54s41ir3v6pa2vgyppip0pxzlsi21mhqk5",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/hackage.nix/archive/efc3d30740397084b977a2ffbba39808a84c33a2.tar.gz",
+        "url": "https://github.com/input-output-hk/hackage.nix/archive/6ed7bca1b5aadbc3c0e58e66b08b5579cb6541a7.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "haskell-language-server": {
@@ -29,10 +29,10 @@
         "homepage": "https://input-output-hk.github.io/haskell.nix",
         "owner": "input-output-hk",
         "repo": "haskell.nix",
-        "rev": "7078b145e981e8b14fc7ea62126fab3378090ef4",
-        "sha256": "01vwsz14nkjd4qggxxmscmvvfcsbch0lf0frvldf8p4w1rwl54va",
+        "rev": "738af22ce95d9e3f1c9677045db441bca2acc472",
+        "sha256": "0mrckx05zq0gpwfh7s3fx8k8n10anr6dg1v5xjd1xbd2h9180c92",
         "type": "tarball",
-        "url": "https://github.com/input-output-hk/haskell.nix/archive/7078b145e981e8b14fc7ea62126fab3378090ef4.tar.gz",
+        "url": "https://github.com/input-output-hk/haskell.nix/archive/738af22ce95d9e3f1c9677045db441bca2acc472.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "implicit-hie": {
@@ -41,10 +41,10 @@
         "homepage": "",
         "owner": "Avi-D-coder",
         "repo": "implicit-hie",
-        "rev": "fc93819ce4bd6ff0ae78a462c08ecde137daf614",
-        "sha256": "13gfm7hs0vhrd5qjvpcwyy985ks2lzrp386pzv55s1jqiwh3rcdz",
+        "rev": "03799c545e04881afd2794f76651f932f632ee87",
+        "sha256": "1bzkndc74jdl8dm45h2xm1lxwpsk94ij8xg10bsxvjkwgk6xczgp",
         "type": "tarball",
-        "url": "https://github.com/Avi-D-coder/implicit-hie/archive/fc93819ce4bd6ff0ae78a462c08ecde137daf614.tar.gz",
+        "url": "https://github.com/Avi-D-coder/implicit-hie/archive/03799c545e04881afd2794f76651f932f632ee87.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "niv": {
@@ -77,10 +77,10 @@
         "homepage": "",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "91c655d4adfee164b867f97f279c87ff607b37a3",
-        "sha256": "0zmsk397km3hswfqm1182yk1qipi24vyx9b5lx0vsib51kd5bm2v",
+        "rev": "28f804f1426c4fa60aac58cf7eacc76b878a13f8",
+        "sha256": "032wpsh2k587187azsqakkxx169gaqqy0sw5i5hxam73pcg0kvjl",
         "type": "tarball",
-        "url": "https://github.com/nix-community/NUR/archive/91c655d4adfee164b867f97f279c87ff607b37a3.tar.gz",
+        "url": "https://github.com/nix-community/NUR/archive/28f804f1426c4fa60aac58cf7eacc76b878a13f8.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }
