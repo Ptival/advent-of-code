@@ -1,0 +1,42 @@
+cabal-version: 2.4
+name: aoc2022
+version: 0.1.0.0
+author: Valentin Robert
+
+common common-all
+  build-depends:
+    base ^>=4.16.1.0,
+    lens,
+    megaparsec,
+    string-interpolate,
+  default-extensions:
+    ConstraintKinds
+    DataKinds
+    FlexibleContexts
+    GADTs
+    KindSignatures
+    LambdaCase
+    NumericUnderscores
+    RankNTypes
+    ScopedTypeVariables
+    TypeApplications
+    TypeFamilies
+  default-language: Haskell2010
+  exposed-modules:
+    ListExtras
+
+library
+  import: common-all
+  hs-source-dirs: lib
+
+common common-executables
+  import: common-all
+  build-depends:
+    aoc2022,
+
+executable day01
+  import: common-executables
+  hs-source-dirs: day01
+  main-is: Main.hs
+  build-depends:
+    aoc2022,
