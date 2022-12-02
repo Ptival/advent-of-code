@@ -2,6 +2,7 @@
 
 module Main where
 
+import AdventOfCode (contentsForDay)
 import Control.Arrow ((>>>))
 import Data.List (find, groupBy, sort, sortBy)
 import Data.Maybe (fromJust)
@@ -27,8 +28,7 @@ solvePart2 = caloriesPerElf >>> sortBy (comparing Down) >>> take 3 >>> sum
 main :: IO ()
 main =
   do
-    test_contents <- readFile "inputs/day01/test.txt"
-    real_contents <- readFile "inputs/day01/real.txt"
+    (test_contents, real_contents) <- contentsForDay "01"
 
     let part1_test = solvePart1 test_contents
     putStrLn [i| Test 1: #{part1_test} |]

@@ -6,6 +6,7 @@ author: Valentin Robert
 common common-all
   build-depends:
     base ^>=4.16.1.0,
+    extra,
     lens,
     megaparsec,
     string-interpolate,
@@ -26,6 +27,7 @@ common common-all
 library
   import: common-all
   exposed-modules:
+    AdventOfCode
     ListExtras
     MegaparsecExtras
   hs-source-dirs: lib
