@@ -8,9 +8,15 @@ import Data.Maybe (fromJust)
 import Data.Ord (Down (Down), comparing)
 import Data.String.Interpolate (i)
 import ListExtras (splitOn)
+import MegaparsecExtras (Parser, lineSeparatedNumbers, parseOrFail)
+import Text.Megaparsec (sepEndBy)
+import Text.Megaparsec.Char (newline)
+
+parse :: String -> [[Integer]]
+parse = parseOrFail (lineSeparatedNumbers `sepEndBy` newline)
 
 caloriesPerElf :: String -> [Integer]
-caloriesPerElf = lines >>> splitOn "" >>> map (sum . map read)
+caloriesPerElf = parse >>> map sum
 
 solvePart1 :: String -> Integer
 solvePart1 = caloriesPerElf >>> maximum
