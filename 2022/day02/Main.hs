@@ -2,7 +2,7 @@
 
 module Main where
 
-import AdventOfCode (contentsForDay)
+import AdventOfCode (runDay)
 import Control.Applicative (asum)
 import Control.Arrow ((&&&), (>>>))
 import Data.Bifunctor (Bifunctor (second), bimap)
@@ -14,7 +14,6 @@ import Data.Maybe (catMaybes, fromJust, fromMaybe, isJust)
 import Data.String.Interpolate (i, __i)
 import Data.Tuple.Extra (dupe)
 import Data.Void (Void)
-import Debug.Trace
 import MegaparsecExtras (Parser, parseOrFail)
 import Text.Megaparsec (Parsec, Stream, count, parseMaybe, sepEndBy, some)
 import Text.Megaparsec.Char (asciiChar, char, newline, space)
@@ -94,18 +93,4 @@ solvePart2 =
     >>> sum
 
 main :: IO ()
-main =
-  do
-    (test_contents, real_contents) <- contentsForDay "02"
-
-    let part1_test = solvePart1 test_contents
-    putStrLn [i| Test 1: #{part1_test} |]
-
-    let part1 = solvePart1 real_contents
-    putStrLn [i| Part 1: #{part1} |]
-
-    let part2_test = solvePart2 test_contents
-    putStrLn [i| Test 2: #{part2_test} |]
-
-    let part2 = solvePart2 real_contents
-    putStrLn [i| Part 2: #{part2} |]
+main = runDay 02 solvePart1 solvePart2
