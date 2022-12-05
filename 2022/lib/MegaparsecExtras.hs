@@ -8,10 +8,13 @@ import Text.Megaparsec.Char (newline, numberChar, alphaNumChar)
 type Parser = Parsec Void String
 
 lineSeparatedNumbers :: Parser [Integer]
-lineSeparatedNumbers = (read <$> some numberChar) `sepEndBy` newline
+lineSeparatedNumbers = parseNumber `sepEndBy` newline
 
 lineSeparatedStrings :: Parser [String]
 lineSeparatedStrings = some alphaNumChar `sepEndBy` newline
+
+parseNumber :: Num a => Read a => Parser a
+parseNumber = read <$> some numberChar
 
 parseOrFail :: Parser a -> String -> a
 parseOrFail p = (fromMaybe (error "Failed to parse") . parseMaybe p)
