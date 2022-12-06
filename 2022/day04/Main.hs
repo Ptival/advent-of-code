@@ -1,12 +1,9 @@
-{-# LANGUAGE QuasiQuotes #-}
-
 module Main where
 
 import AdventOfCode (runDay)
 import Control.Arrow ((>>>))
-import Data.String.Interpolate (i)
 import MegaparsecExtras (Parser, parseOrFail)
-import Text.Megaparsec (sepEndBy, some)
+import Text.Megaparsec (sepEndBy)
 import Text.Megaparsec.Char (char, newline)
 import Text.Megaparsec.Char.Lexer (decimal)
 

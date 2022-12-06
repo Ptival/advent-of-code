@@ -23,6 +23,7 @@ common common-all
     TypeApplications
     TypeFamilies
   default-language: Haskell2010
+  ghc-options: -Wall
 
 library
   import: common-all

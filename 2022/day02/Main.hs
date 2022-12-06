@@ -1,22 +1,14 @@
-{-# LANGUAGE QuasiQuotes #-}
-
 module Main where
 
 import AdventOfCode (runDay)
 import Control.Applicative (asum)
-import Control.Arrow ((&&&), (>>>))
-import Data.Bifunctor (Bifunctor (second), bimap)
-import Data.Data (Proxy (Proxy))
-import Data.Foldable (asum, find)
+import Control.Arrow ((>>>))
+import Data.Bifunctor (bimap)
 import Data.Functor (($>))
-import Data.Functor.Compose (Compose)
-import Data.Maybe (catMaybes, fromJust, fromMaybe, isJust)
-import Data.String.Interpolate (i, __i)
 import Data.Tuple.Extra (dupe)
-import Data.Void (Void)
 import MegaparsecExtras (Parser, parseOrFail)
-import Text.Megaparsec (Parsec, Stream, count, parseMaybe, sepEndBy, some)
-import Text.Megaparsec.Char (asciiChar, char, newline, space)
+import Text.Megaparsec (sepEndBy)
+import Text.Megaparsec.Char (char, newline, space)
 
 data RPS = Rock | Paper | Scissors deriving (Eq, Show)
 

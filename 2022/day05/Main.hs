@@ -1,20 +1,16 @@
-{-# LANGUAGE QuasiQuotes #-}
-
 module Main where
 
-import AdventOfCode (runDay, traceIt)
+import AdventOfCode (runDay)
 import Control.Applicative (asum, optional)
 import Control.Arrow ((>>>))
-import Control.Lens (Ixed (ix), element, over, view, (%~), (&), (.~))
+import Control.Lens (Ixed (ix), view, (%~), (&))
 import Control.Monad (replicateM)
-import Data.List (find, foldl', groupBy, sort, sortBy, transpose)
-import Data.Maybe (catMaybes, fromJust)
-import Data.Ord (Down (Down), comparing)
-import Data.String.Interpolate (i)
-import ListExtras (splitOn)
-import MegaparsecExtras (Parser, lineSeparatedNumbers, parseOrFail, parseNumber)
-import Text.Megaparsec (MonadParsec (try), ShareInput (ShareInput), anySingle, empty, many, sepEndBy, some, (<|>))
-import Text.Megaparsec.Char (alphaNumChar, asciiChar, char, letterChar, newline, numberChar, printChar, space, string)
+import Data.List (foldl', transpose)
+import Data.Maybe (catMaybes)
+import MegaparsecExtras (Parser, parseNumber, parseOrFail)
+import Text.Megaparsec (MonadParsec (try), many, sepEndBy, some)
+import Text.Megaparsec.Char (char, letterChar, newline, printChar, string)
+import Prelude hiding (lines)
 
 type Crate = Char
 
@@ -37,11 +33,11 @@ parseCrateLines = do
 
 parseMoveLine :: Parser Move
 parseMoveLine = do
-  string "move "
+  _ <- string "move "
   a <- parseNumber
-  string " from "
+  _ <- string " from "
   b <- parseNumber
-  string " to "
+  _ <- string " to "
   c <- parseNumber
   return (a, b, c)
 
@@ -60,7 +56,7 @@ applyMoves onMove = foldl' (applyMove onMove)
 parse :: String -> ([[Crate]], [Move])
 parse = parseOrFail $ do
   stacks <- parseCrateLines
-  many printChar >> newline >> newline
+  _ <- many printChar >> newline >> newline
   moves <- parseMoveLine `sepEndBy` newline
   return (stacks, moves)
 

@@ -1,5 +1,3 @@
-{-# LANGUAGE QuasiQuotes #-}
-
 module Main where
 
 import AdventOfCode (runDay)
@@ -8,10 +6,9 @@ import Data.Char (ord)
 import Data.Ix (inRange)
 import Data.List (intersect, nub)
 import Data.List.Extra (chunksOf)
-import Data.String.Interpolate (i)
-import MegaparsecExtras (Parser, parseOrFail)
-import Text.Megaparsec (Parsec, Stream, count, parseMaybe, sepEndBy, some)
-import Text.Megaparsec.Char (asciiChar, char, letterChar, newline, space)
+import MegaparsecExtras (parseOrFail)
+import Text.Megaparsec (sepEndBy, some)
+import Text.Megaparsec.Char (letterChar, newline)
 
 parse :: String -> [String]
 parse = parseOrFail (some letterChar `sepEndBy` newline)

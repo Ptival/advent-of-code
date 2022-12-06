@@ -1,15 +1,10 @@
-{-# LANGUAGE QuasiQuotes #-}
-
 module Main where
 
 import AdventOfCode (runDay)
 import Control.Arrow ((>>>))
-import Data.List (find, groupBy, sort, sortBy)
-import Data.Maybe (fromJust)
+import Data.List (sortBy)
 import Data.Ord (Down (Down), comparing)
-import Data.String.Interpolate (i)
-import ListExtras (splitOn)
-import MegaparsecExtras (Parser, lineSeparatedNumbers, parseOrFail)
+import MegaparsecExtras (lineSeparatedNumbers, parseOrFail)
 import Text.Megaparsec (sepEndBy)
 import Text.Megaparsec.Char (newline)
 
