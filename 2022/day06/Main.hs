@@ -2,21 +2,29 @@ module Main where
 
 import AdventOfCode (runDay)
 import Control.Arrow ((>>>))
-import MegaparsecExtras (Parser, parseOrFail)
-import Text.Megaparsec (many, sepEndBy)
-import Text.Megaparsec.Char (asciiChar, newline)
+import Data.List (nub, tails)
+import MegaparsecExtras (parseOrFail)
+import Text.Megaparsec (many)
+import Text.Megaparsec.Char (letterChar, newline)
 
-parseLine :: Parser String
-parseLine = many asciiChar
+parse :: String -> String
+parse = parseOrFail $ many letterChar <* newline
 
-parse :: String -> [String]
-parse = parseOrFail (parseLine `sepEndBy` newline)
+markerPosition :: Int -> String -> Int
+markerPosition markerLength =
+  parse
+    >>> zip [markerLength ..]
+    >>> tails
+    >>> dropWhile ((/= markerLength) . length . nub . take markerLength . map snd)
+    >>> head
+    >>> head
+    >>> fst
 
-solvePart1 :: String -> String
-solvePart1 = parse >>> show
+solvePart1 :: String -> Int
+solvePart1 = markerPosition 4
 
-solvePart2 :: String -> String
-solvePart2 = parse >>> show
+solvePart2 :: String -> Int
+solvePart2 = markerPosition 14
 
 main :: IO ()
 main = runDay 06 solvePart1 solvePart2
