@@ -7,9 +7,11 @@ common common-all
   build-depends:
     base ^>=4.16.1.0,
     extra,
+    freer-simple,
     lens,
     megaparsec,
     string-interpolate,
+    vector,
   default-extensions:
     ConstraintKinds
     DataKinds
@@ -31,6 +33,7 @@ library
     AdventOfCode
     ListExtras
     MegaparsecExtras
+    SquareGrid
   hs-source-dirs: lib
 
 common common-executables
