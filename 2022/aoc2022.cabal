@@ -7,23 +7,31 @@ common common-all
   build-depends:
     base ^>=4.16.1.0,
     extra,
+    finite-typelits,
     freer-simple,
+    generic-lens,
+    ghc,
     lens,
     megaparsec,
     string-interpolate,
     vector,
+    vector-sized,
   default-extensions:
     ConstraintKinds
     DataKinds
+    DeriveGeneric
     FlexibleContexts
     GADTs
+    GeneralizedNewtypeDeriving
     KindSignatures
     LambdaCase
     NumericUnderscores
     RankNTypes
     ScopedTypeVariables
+    TupleSections
     TypeApplications
     TypeFamilies
+    TypeOperators
   default-language: Haskell2010
   ghc-options: -Wall
 
