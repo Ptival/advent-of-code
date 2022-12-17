@@ -6,13 +6,16 @@ author: Valentin Robert
 common common-all
   build-depends:
     base ^>=4.16.1.0,
+    containers,
     extra,
     finite-typelits,
     freer-simple,
     generic-lens,
     ghc,
+    ilist,
     lens,
     megaparsec,
+    profunctors,
     string-interpolate,
     vector,
     vector-sized,
@@ -39,6 +42,8 @@ library
   import: common-all
   exposed-modules:
     AdventOfCode
+    FreerExtras
+    FunctionExtras
     ListExtras
     MegaparsecExtras
     SquareGrid
