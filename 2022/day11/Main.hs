@@ -206,7 +206,7 @@ computeCommonDivisor =
     >>> map (view (test . _1))
     >>> product
 
-solvePart1 :: String -> IO Integer
+solvePart1 :: String -> IO String
 solvePart1 s = do
   let myMonkeys = parse s
   runTrace
@@ -221,9 +221,9 @@ solvePart1 s = do
             Map.toList finalMonkeys
               $>>> sortBy (comparing (Down . view inspectionCount . snd))
               >>> take 2
-      return $ view inspectionCount monkey1 * view inspectionCount monkey2
+      return $ show $ view inspectionCount monkey1 * view inspectionCount monkey2
 
-solvePart2 :: String -> IO Integer
+solvePart2 :: String -> IO String
 solvePart2 s = do
   let myMonkeys = parse s
   runTrace
@@ -239,7 +239,7 @@ solvePart2 s = do
             Map.toList finalMonkeys
               $>>> sortBy (comparing (Down . view inspectionCount . snd))
               >>> take 2
-      return $ view inspectionCount monkey1 * view inspectionCount monkey2
+      return $ show $ view inspectionCount monkey1 * view inspectionCount monkey2
 
 main :: IO ()
 main = runDay 11 solvePart1 solvePart2

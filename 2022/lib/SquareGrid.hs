@@ -1,9 +1,19 @@
 module SquareGrid where
 
+import Control.Arrow ((>>>))
+import Data.List (intersperse)
 import qualified Data.Vector as V
 
 -- | Grid, outside are lines, inside are columns
 type Grid a = V.Vector (V.Vector a)
+
+-- NOTE: Not using a `Show` instance here, because `Show` for `Char` will add
+-- quotes and it's annoying.
+showGrid :: (a -> String) -> Grid a -> String
+showGrid showElement =
+  V.map (concat . intersperse " " . map showElement . V.toList)
+    >>> V.toList
+    >>> unlines
 
 type Coord = (Int, Int)
 
@@ -45,3 +55,30 @@ positionsEastFromOutside g = reverse . positionsEastFromClosest g
 
 positionsEastFromClosest :: Grid a -> Coord -> [Coord]
 positionsEastFromClosest g (l, c) = [(l, i) | i <- [c + 1 .. maxCol g]]
+
+isValidCoord :: Grid a -> Coord -> Bool
+isValidCoord g (l, c) =
+  (0 <= l) && (l <= maxLine g) && (0 <= c) && (c <= maxCol g)
+
+-- | Returns the coordinates of neighbor to the north, south, east, and east
+fourWayNeighbors :: Grid a -> Coord -> [Coord]
+fourWayNeighbors g (r, c) =
+  filter (isValidCoord g) [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]
+
+-- | Returns the coordinates of neighbor to the south and to the east
+futureFourWayNeighbors :: Grid a -> Coord -> [Coord]
+futureFourWayNeighbors g (r, c) =
+  filter (isValidCoord g) [(r + 1, c), (r, c + 1)]
+
+
+-- | Assigns a unique number to each coordinate, starting with 0 for (0, 0),
+-- then proceeding line by line, column by column.
+coordIdentifier :: Grid a -> Coord -> Int
+coordIdentifier g (l, c) = l * (maxCol g + 1) + c
+
+allCoordsLineByLine :: Grid a -> [Coord]
+allCoordsLineByLine g =
+  [ (l, c)
+    | l <- [0 .. maxLine g],
+      c <- [0 .. maxCol g]
+  ]
