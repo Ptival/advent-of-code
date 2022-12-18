@@ -16,6 +16,7 @@ common common-all
     ilist,
     lens,
     megaparsec,
+    monadlist,
     profunctors,
     string-interpolate,
     vector,
