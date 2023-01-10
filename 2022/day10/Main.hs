@@ -112,10 +112,10 @@ evalRegisters = evalState (Registers 1)
 evalCycle :: Eff (State Cycle : effs) a -> Eff effs a
 evalCycle = evalState (Cycle 1)
 
-solvePart1 :: String -> IO Int
+solvePart1 :: String -> IO String
 solvePart1 s = do
   let instrs = parse s
-  runTrace
+  result <- runTrace
     . evalSignalStrength
     . evalRegisters
     . evalCycle
@@ -124,6 +124,7 @@ solvePart1 s = do
     $ do
       forM_ instrs dispatchInstr
       view signalStrength <$> get
+  return $ show result
 
 -- * Part 2
 
@@ -204,16 +205,17 @@ preCycleHandlerCRT = do
 evalCRT :: Eff (State CRT : effs) a -> Eff effs a
 evalCRT = evalState (CRT (V.replicate (V.replicate False)) (0, 0))
 
-solvePart2 :: String -> IO ()
+solvePart2 :: String -> IO String
 solvePart2 s = do
   let instrs = parse s
-  runTrace
+  () <- runTrace
     . evalSignalStrength
     . evalRegisters
     . evalCycle
     . evalCRT
     . runReader (PreCycleHandler @PreCycleHandlerEffs preCycleHandlerCRT)
     $ forM_ instrs runInstrOnCRT
+  return "Must read the text in the output above"
 
 main :: IO ()
 main = runDay 10 solvePart1 solvePart2

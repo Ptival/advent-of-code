@@ -20,11 +20,11 @@ markerPosition markerLength =
     >>> head
     >>> fst
 
-solvePart1 :: String -> Int
-solvePart1 = markerPosition 4
+solvePart1 :: String -> IO String
+solvePart1 = pure . show . markerPosition 4
 
-solvePart2 :: String -> Int
-solvePart2 = markerPosition 14
+solvePart2 :: String -> IO String
+solvePart2 = pure . show . markerPosition 14
 
 main :: IO ()
 main = runDay 06 solvePart1 solvePart2

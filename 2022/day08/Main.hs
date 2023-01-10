@@ -52,8 +52,13 @@ visiblePositions f =
           isVisible f (l, c)
       ]
 
-solvePart1 :: String -> String
-solvePart1 = parse >>> asForest >>> visiblePositions >>> length >>> show
+solvePart1 :: String -> IO String
+solvePart1 =
+  parse
+    >>> asForest
+    >>> visiblePositions
+    >>> length
+    >>> pure . show
 
 treeScore :: Forest -> (Int, Int) -> Int
 treeScore f t@(line, col) =
@@ -84,11 +89,12 @@ maxScore f =
         j <- [SG.minCol f + 1 .. SG.maxCol f - 1] -- Likewise
     ]
 
-solvePart2 :: String -> Int
+solvePart2 :: String -> IO String
 solvePart2 =
   parse
     >>> asForest
     >>> maxScore
+    >>> pure . show
 
 main :: IO ()
 main = runDay 08 solvePart1 solvePart2

@@ -24,11 +24,11 @@ contains (a, b) (c, d) = (a <= c && b >= d) || (c <= a && d >= b)
 overlaps :: Interval -> Interval -> Bool
 overlaps i1 i2 = (fst i1 <= snd i2) && (fst i2 <= snd i1)
 
-solvePart1 :: String -> Int
-solvePart1 = parse >>> filter (uncurry contains) >>> length
+solvePart1 :: String -> IO String
+solvePart1 = parse >>> filter (uncurry contains) >>> length >>> pure . show
 
-solvePart2 :: String -> Int
-solvePart2 = parse >>> filter (uncurry overlaps) >>> length
+solvePart2 :: String -> IO String
+solvePart2 = parse >>> filter (uncurry overlaps) >>> length >>> pure . show
 
 main :: IO ()
 main = runDay 04 solvePart1 solvePart2

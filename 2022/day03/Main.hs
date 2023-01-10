@@ -18,7 +18,7 @@ splitHalfway s =
   let len = length s `div` 2
    in (take len s, drop len s)
 
-solvePart1 :: String -> Int
+solvePart1 :: String -> IO String
 solvePart1 =
   parse
     >>> map splitHalfway
@@ -26,6 +26,7 @@ solvePart1 =
     >>> concat
     >>> map priority
     >>> sum
+    >>> pure . show
 
 priority :: Char -> Int
 priority c
@@ -33,12 +34,13 @@ priority c
   | inRange (ord 'A', ord 'Z') (ord c) = ord c - ord 'A' + 27
   | otherwise = 0
 
-solvePart2 :: String -> Int
+solvePart2 :: String -> IO String
 solvePart2 =
   parse
     >>> chunksOf 3
     >>> map (priority . head . foldl1 intersect)
     >>> sum
+    >>> pure . show
 
 main :: IO ()
 main = runDay 03 solvePart1 solvePart2

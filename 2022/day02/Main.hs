@@ -44,7 +44,7 @@ rpsOutcome (Paper, Scissors) = Win
 rpsOutcome (Scissors, Rock) = Win
 rpsOutcome _ = Lose
 
-solvePart1 :: String -> Integer
+solvePart1 :: String -> IO String
 solvePart1 =
   parse
     >>> map
@@ -53,6 +53,7 @@ solvePart1 =
           . dupe
       )
     >>> sum
+    >>> pure . show
 
 -- * Part 2
 
@@ -74,7 +75,7 @@ pickPlay Paper Win = Scissors
 pickPlay Scissors Lose = Paper
 pickPlay Scissors Win = Rock
 
-solvePart2 :: String -> Integer
+solvePart2 :: String -> IO String
 solvePart2 =
   parseFixed
     >>> map
@@ -83,6 +84,7 @@ solvePart2 =
           . dupe
       )
     >>> sum
+    >>> pure . show
 
 main :: IO ()
 main = runDay 02 solvePart1 solvePart2

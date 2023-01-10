@@ -60,11 +60,11 @@ parse = parseOrFail $ do
   moves <- parseMoveLine `sepEndBy` newline
   return (stacks, moves)
 
-solvePart1 :: String -> String
-solvePart1 = parse >>> uncurry (applyMoves reverse) >>> map head
+solvePart1 :: String -> IO String
+solvePart1 = parse >>> uncurry (applyMoves reverse) >>> map head >>> pure
 
-solvePart2 :: String -> String
-solvePart2 = parse >>> uncurry (applyMoves id) >>> map head
+solvePart2 :: String -> IO String
+solvePart2 = parse >>> uncurry (applyMoves id) >>> map head >>> pure
 
 main :: IO ()
 main = runDay 05 solvePart1 solvePart2

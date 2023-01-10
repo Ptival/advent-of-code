@@ -115,25 +115,27 @@ computeAllFileSystems =
     >>> asFileSystem
     >>> allFileSystems
 
-solvePart1 :: String -> Int
+solvePart1 :: String -> IO String
 solvePart1 =
   computeAllFileSystems
     >>> map size
     >>> filter (<= 100_000)
     >>> sum
+    >>> pure . show
 
 keepIfFreesEnoughSpace :: Int -> [Int] -> [Int]
 keepIfFreesEnoughSpace currentUsedSpace = filter freesEnoughSpace
   where
     freesEnoughSpace dirSize = 70_000_000 - currentUsedSpace + dirSize >= 30_000_000
 
-solvePart2 :: String -> Int
+solvePart2 :: String -> IO String
 solvePart2 =
   computeAllFileSystems
     >>> map size
     >>> (maximum &&& id)
     >>> uncurry keepIfFreesEnoughSpace
     >>> minimum
+    >>> pure . show
 
 main :: IO ()
 main = runDay 07 solvePart1 solvePart2

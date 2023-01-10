@@ -4,6 +4,7 @@ version: 0.1.0.0
 author: Valentin Robert
 
 common common-all
+
   build-depends:
     base ^>=4.16.1.0,
     containers,
@@ -21,6 +22,7 @@ common common-all
     string-interpolate,
     vector,
     vector-sized,
+
   default-extensions:
     ConstraintKinds
     DataKinds
@@ -38,6 +40,7 @@ common common-all
     TypeFamilies
     TypeOperators
     ViewPatterns
+
   default-language: Haskell2010
   ghc-options: -Wall
 
